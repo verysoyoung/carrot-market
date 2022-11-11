@@ -1,29 +1,55 @@
-// Less Code
-// Better Validation
-// Better Errors (set, display, clear)
-// Have Control over inputs
-// Don't deal with events
-// Easier Inputs
+import { FieldErrors, useForm } from 'react-hook-form'
 
-import { useForm } from 'react-hook-form'
-
+interface LoginProps {
+  username: string
+  email: string
+  password: string
+}
 export default function Form() {
-  const { register } = useForm()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginProps>()
+  const onValid = (data: LoginProps) => {
+    console.log(data, 'data')
+  }
+  const onInValid = (errors: FieldErrors) => {
+    console.log(errors, 'errors')
+  }
   return (
-    <form>
+    <form onSubmit={handleSubmit(onValid, onInValid)}>
       <input
-        {...register('username')}
+        {...register('username', {
+          required: 'Username id required',
+          minLength: {
+            message: 'The Username should be longer than 5 chars.',
+            value: 5,
+          },
+        })}
         type="text"
         placeholder="User Name"
-        required
       />
-      <input {...register('email')} type="email" placeholder="Email" required />
+      {errors.username?.message}
       <input
-        {...register('password')}
+        {...register('email', {
+          required: 'Email id required',
+          validate: {
+            notGamil: mail =>
+              !mail.includes('@gmail.com') || 'Gmail is not allowed',
+          },
+        })}
+        type="email"
+        placeholder="Email"
+        className={`${Boolean(errors.email?.message) ? 'border-red-500' : ''}`}
+      />
+      {errors.email?.message}
+      <input
+        {...register('password', { required: 'Password id required' })}
         type="password"
         placeholder="Passward"
-        required
       />
+      {errors.password?.message}
       <input type="submit" value="Create Account" />
     </form>
   )
