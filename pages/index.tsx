@@ -55,9 +55,9 @@ export default function Home() {
           <span className="text-xs text-gray-400">Chair</span>
           <div className="flex justify-between items-center mt-3 mb-5">
             <div className="space-x-2">
-              <button className="w-5 h-5 rounded-full bg-yellow-500" />
-              <button className="w-5 h-5 rounded-full bg-indigo-500" />
-              <button className="w-5 h-5 rounded-full bg-teal-500" />
+              <button className="w-5 h-5 rounded-full bg-yellow-500 focus:ring-2 ring-offset-2 ring-yellow-500 transition" />
+              <button className="w-5 h-5 rounded-full bg-indigo-500 focus:ring-2 ring-offset-2 ring-indigo-500 transition" />
+              <button className="w-5 h-5 rounded-full bg-teal-500 focus:ring-2 ring-offset-2 ring-teal-500 transition" />
             </div>
             <div className="flex items-center space-x-3">
               <button className="flex justify-center items-center bg-blue-200 w-8 aspect-square rounded-xl text-gray-500 text-lg">
