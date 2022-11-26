@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="bg-slate-300 py-20 px-20 grid gap-5">
+    <div className="bg-slate-300 py-20 px-20 grid gap-5 min-h-screen">
       <div className="bg-white p-6 rounded-3xl shadow-xl">
         <span className="font-semibold text-3xl">Select Item</span>
         <div className="flex justify-between">
@@ -15,9 +15,9 @@ export default function Home() {
           <span>Total</span>
           <span className="font-semibold">$59</span>
         </div>
-        <div className="mt-5 bg-blue-500 p-2 text-center text-white rounded-xl w-2/4 mx-auto">
+        <button className="mt-5 bg-blue-500 p-2 text-center text-white rounded-xl w-3/4 mx-auto hover:bg-teal-500 hover:text-black active:bg-yellow-400 focus:bg-red-400">
           Check Out
-        </div>
+        </button>
       </div>
       <div className="bg-white overflow-hidden rounded-2xl shadow-xl">
         <div className="bg-blue-500 p-6 text-2xl pb-14">
@@ -41,7 +41,42 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-white p-6 rounded-2xl shadow-xl"></div>
+      <div className="bg-white p-6 rounded-2xl shadow-xl ">
+        <div className="flex justify-between mb-5">
+          <span>⬅️</span>
+          <div className="space-x-3">
+            <span>⭐️4.9</span>
+            <span className="shadow-xl p-2 rounded-md">💖</span>
+          </div>
+        </div>
+        <div className="bg-zinc-400 h-72 " />
+        <div className="flex flex-col">
+          <span className="font-medium">Swoon Lounge</span>
+          <span className="text-xs text-gray-400">Chair</span>
+          <div className="flex justify-between items-center mt-3 mb-5">
+            <div className="space-x-2">
+              <button className="w-5 h-5 rounded-full bg-yellow-500" />
+              <button className="w-5 h-5 rounded-full bg-indigo-500" />
+              <button className="w-5 h-5 rounded-full bg-teal-500" />
+            </div>
+            <div className="flex items-center space-x-3">
+              <button className="flex justify-center items-center bg-blue-200 w-8 aspect-square rounded-xl text-gray-500 text-lg">
+                -
+              </button>
+              <span>1</span>
+              <button className="flex justify-center items-center bg-blue-200 w-8 aspect-square rounded-xl text-gray-500 text-lg">
+                +
+              </button>
+            </div>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="font-medium text-lg">$450</span>
+            <span className="bg-blue-500 py-2 px-10 text-center text-sm text-gray-100 rounded-lg ">
+              Add to cart
+            </span>
+          </div>
+        </div>
+      </div>
       <div className="bg-white p-6 rounded-2xl shadow-xl"></div>
     </div>
   )
