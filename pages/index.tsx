@@ -19,17 +19,17 @@ export default function Home() {
           Check Out
         </button>
       </div>
-      <div className="bg-white overflow-hidden rounded-2xl shadow-xl">
+      <div className="bg-white overflow-hidden rounded-2xl shadow-xl ">
         <div className="bg-blue-500 p-6 text-2xl pb-14">
           <span className="text-white">Profile</span>
         </div>
-        <div className="bg-white rounded-3xl p-6 relative -top-5">
-          <div className="relative -top-16 flex items-end justify-between">
+        <div className="bg-white rounded-3xl p-6 relative -top-5 group">
+          <div className="relative -top-16 flex items-end justify-between ">
             <div className="flex flex-col items-center">
               <span className="text-gray-400 text-sm">Orders</span>
               <span className="font-medium">340</span>
             </div>
-            <div className="h-24 w-24 rounded-full bg-slate-500" />
+            <div className="h-24 w-24 rounded-full bg-slate-500 group-hover:bg-lime-500 transition-colors" />
             <div className="flex flex-col items-center">
               <span className="text-gray-400 text-sm">Spent</span>
               <span className="font-medium">$2,310</span>
